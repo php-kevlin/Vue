@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	请输入:<input type="text" id="app" oninput="doSomething()">
+	<p id="demo"></p>
+	<script type="text/javascript">
+		function doSomething(){
+			var val = document.getElementById('app').value;
+			document.getElementById('demo').innerHTML = "你输入的是"+val;
+		}
+	</script>
+</body>
+</html>

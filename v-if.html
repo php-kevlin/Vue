@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.min.js"></script>
+</head>
+<body>
+
+	<div id="app">
+			
+		<!-- 	<div v-if="Math.random()+2 > 2.4">
+				true
+			</div>
+
+			<div v-else>
+				v-else
+			</div> -->
+		<div v-if="type === 'A'">A</div>
+		<div v-else-if="type ==='B'">B</div>
+		<div v-else-if="type ==='C'">C</div>
+		<div v-else>Not</div>
+
+		<!-- <p v-if="ok">现在你可以看见我了</p>
+		<template v-if="see">
+			<h1>菜鸟教程</h1>
+		</template> -->
+		<div v-show="ok">hello</div>
+
+    </div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				ok:true,
+				see:true,
+				type:'A'
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<style type="text/css">
+	.class1{
+		color: red;
+		background:#111;
+	}
+</style>
+<body>
+	<div id="app">
+		<!-- <div v-bind:class="{'class1':use}">
+			v-bind:class  指令
+		</div> -->
+	<a v-bind:href="url"><h1>链接</h1></a>
+	<a :href="url"><h1>链接</h1></a>
+	</div>
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				use:true,
+				url :"https://www.baidu.com"
+			}
+		});
+	</script>
+</body>
+</html>

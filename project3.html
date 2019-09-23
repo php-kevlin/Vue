@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./style/3.css">
+	<script src="vue.min.js"></script>
+</head>
+<body>
+	<form id="app">
+		<h1>Services</h1>
+		<ul>
+			<li v-for="good in goods" v-on:click="compantPrice(good)" v-bind:class="{'active':good.active}">{{good.name}}{{good.price}}</li>
+		</ul>
+
+	<div class="total">
+		Total: <span>{{total() | currency}}</span>
+			</div>
+	</form>
+
+	<script type="text/javascript">
+
+				Vue.filter('currency',function(value){
+						return '$'+value.toFixed(2)
+				});
+
+
+		var app = new Vue({
+			el:"#app",
+			data:{
+				goods:[
+					{
+						name:'Web Development',
+						price:300.00,
+						active:true
+					},
+					{
+						name:'Design',
+						price:400.00,
+						active:false
+					},
+					{
+						name:'Integration',
+						price:250.00,
+						active:false
+					},
+					{
+						name:'Training',
+						price:220.00,
+						active:false
+					}
+				],
+				Total:0
+			},
+			methods:{
+				compantPrice:function(s){
+				s.active = !s.active
+				},
+				total:function(){
+				var total = 0
+				this.goods.forEach(function(s){
+					if (s.active) {
+						total +=s.price
+					}
+				});
+				return total;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

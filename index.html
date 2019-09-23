@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.min.js"></script>
+</head>
+<body>
+	<div id="vue-det">
+		<h1>site:{{site}}</h1>
+		<h1>url:{{url}}</h1>
+		<h1>{{details()}}</h1>
+	</div>
+
+	<script type="text/javascript">
+		var data = {
+				site:"菜鸟教程",
+				url :"www.runoob.com",
+				alexa:"10000"
+			};
+		var vm = new Vue({
+			el : "#vue-det",
+			data : data,
+			methods:{
+				details:function(){
+					return this.site+"-学的不仅是技术,更是梦想!";
+				}
+			}
+
+		});
+
+		/*document.write(vm.site === data.site)
+		document.write("<br>")
+
+		vm.site="runoob";
+		document.write(data.site + "<br>") // Runoob
+ 
+		// ……反之亦然
+		data.alexa = 1234
+		document.write(vm.alexa) // 1234*/
+		document.write(vm.$el === document.getElementById("vue-det"));
+	</script>
+</body>
+</html>

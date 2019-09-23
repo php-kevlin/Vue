@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		昵称:<input v-model="username">  <br />
+		年龄:<input v-model="age">  <br />
+		单身:<input type="checkbox"  v-model="checked"> {{checked}} <br />
+		喜欢:<input type="checkbox" value="ruboob" v-model="checkedNames">ruboob  <br />
+			 <input type="checkbox" value="google" v-model="checkedNames"> google <br />
+			 <input type="checkbox" value="baidu" v-model="checkedNames"> baidu <br />
+			 <input type="checkbox" value="youtube" v-model="checkedNames"> youtube <br />
+			 <input type="submit" name="">
+			<br />
+			昵称:{{username}}   <br />
+			年龄:{{age}}   <br />
+			单身: {{checked}}   <br />
+			喜欢:{{checkedNames}}   <br />
+			
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				hello:"hello world!",
+				message:"这是message的数据",
+				username:"username",
+				age:18,
+				checked:false,
+				checkedNames:['runoob']
+			},
+			methods:{
+				doSomething:function(){
+					return "";
+				}
+			}
+		});
+	</script>
+</body>
+</html>

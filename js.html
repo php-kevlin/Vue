@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+	<!-- <div id="app">
+		{{5+5}} <br>
+		{{ok?"yes":"no"}} <br>
+		{{message.split('').reverse().join('')}}
+	</div> -->
+
+	<!-- <div id="app">
+		<p v-if="ok">现在你看到我了</p>
+	</div> -->
+
+<!-- 	<div id="app">
+		<a v-bind:href="url">百度一下</a>
+	</div> -->
+<!-- 	<div id="app">
+		<p v-on:click="doSomething">点击</p>
+	</div> -->
+
+
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				id:1,
+				message:"runoob",
+				ok:false,
+				url:"http://www.baidu.com"
+			},
+			methods:{
+				doSomething:function(){
+				alert(111);
+			}
+			}
+			
+		});
+	</script>
+</body>
+</html>

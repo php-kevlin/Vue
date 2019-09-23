@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		
+<!-- 		<button @click="say('你好')">中文</button>
+		<button v-on:click.once="say('hello')">英文</button>
+		<a href="http://www.baidu.com" v-on:click.stop="doThis">点击</a>
+		<form v-on:submit.prevent="onSubmit" action="http://www.baidu.com" method="get">
+			账号:<input type="text" name="username">
+			<input type="submit" value="提交" />
+		</form> 
+			
+		<input v-on:keyup.enter="submit">-->
+		<div @click.ctrl="doSomething">Do something</div>
+		<input @keyup.alt.67="clear">
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#app",
+			data:{
+				hello:"hello world!",
+				message:"这是message的数据"
+			},
+			methods:{
+				doSomething:function(){
+					alert("doSomething");
+				},
+				say:function(argv){
+					alert(argv);
+				},
+				doThis:function(){
+					alert("doThis");
+				},
+				onSubmit:function(){
+					alert("onSubmit");
+				},
+				submit:function(event){
+					alert(event.target.value);
+				},
+				clear:function(event){
+					alert(event.target.value);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
